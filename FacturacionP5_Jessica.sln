@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32106.194
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FacturacionP5_Jessica", "FacturacionP5_Jessica\FacturacionP5_Jessica.csproj", "{B176BB72-80DB-4815-A662-B9E995EFA95A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2DE981C5-4AD0-4B0B-A4E0-03369CA9E04A} = {2DE981C5-4AD0-4B0B-A4E0-03369CA9E04A}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logica", "Logica\Logica.csproj", "{2DE981C5-4AD0-4B0B-A4E0-03369CA9E04A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B176BB72-80DB-4815-A662-B9E995EFA95A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B176BB72-80DB-4815-A662-B9E995EFA95A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B176BB72-80DB-4815-A662-B9E995EFA95A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B176BB72-80DB-4815-A662-B9E995EFA95A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DE981C5-4AD0-4B0B-A4E0-03369CA9E04A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DE981C5-4AD0-4B0B-A4E0-03369CA9E04A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DE981C5-4AD0-4B0B-A4E0-03369CA9E04A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DE981C5-4AD0-4B0B-A4E0-03369CA9E04A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {268BCCBF-DB5D-476E-AC90-BA581C54DA94}
+	EndGlobalSection
+EndGlobal
