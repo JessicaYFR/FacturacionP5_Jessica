@@ -32,6 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -41,9 +42,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Conexion.cs" />
+    <Compile Include="Models\Bitacora.cs" />
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\ClienteTipo.cs" />
+    <Compile Include="Models\Empresa.cs" />
+    <Compile Include="Models\Factura.cs" />
+    <Compile Include="Models\FacturaDetalle.cs" />
     <Compile Include="Models\FacturaTipo.cs" />
+    <Compile Include="Models\Impuesto.cs" />
+    <Compile Include="Models\Producto.cs" />
+    <Compile Include="Models\ProductoCategoria.cs" />
+    <Compile Include="Models\UnidadMedida.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Models\UsuarioRol.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
