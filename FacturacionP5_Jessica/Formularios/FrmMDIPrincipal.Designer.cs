@@ -134,6 +134,7 @@ namespace FacturacionP5_Jessica.Formularios
             this.gestiónDeUsuariosToolStripMenuItem.Name = "gestiónDeUsuariosToolStripMenuItem";
             this.gestiónDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.gestiónDeUsuariosToolStripMenuItem.Text = "Gestión de Usuarios";
+            this.gestiónDeUsuariosToolStripMenuItem.Click += new System.EventHandler(this.gestiónDeUsuariosToolStripMenuItem_Click);
             // 
             // gestiónDeProductosToolStripMenuItem
             // 

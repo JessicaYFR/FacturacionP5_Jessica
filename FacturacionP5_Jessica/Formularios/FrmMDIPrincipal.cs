@@ -21,5 +21,14 @@ namespace FacturacionP5_Jessica.Formularios
         {
 
         }
+
+        private void gestiónDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!ObjetosGlobales.MiFormDeGestionDeUsuarios.Visible)
+            {
+                ObjetosGlobales.MiFormDeGestionDeUsuarios = new FrmUsuariosGestion();
+                ObjetosGlobales.MiFormDeGestionDeUsuarios.Show();
+            }
+        }
     }
 }
