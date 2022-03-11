@@ -18,6 +18,10 @@ namespace Logica.Models
 
             DataTable R = new DataTable();
 
+            Conexion Micnn = new Conexion();
+             R = Micnn.EjecutarSelect("SpUsuarioRolListar");
+
+
             return R;
         }
     }
