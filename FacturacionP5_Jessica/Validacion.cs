@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace FacturacionP5_Jessica
 {
@@ -11,6 +12,61 @@ namespace FacturacionP5_Jessica
     {
 
         private static char g_Gen_DecimalSeparator = Convert.ToChar(System.Globalization.CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator.ToString());
+
+
+        public static bool ComprobarFormatoEmail(string sEmailAComprobar)
+        {
+            String sFormato;
+            sFormato = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
+            if (Regex.IsMatch(sEmailAComprobar, sFormato))
+            {
+                if (Regex.Replace(sEmailAComprobar, sFormato, String.Empty).Length == 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public static bool ValidacionPassword(string ppassword)
+        {
+            bool R = false; 
+            bool may = false, min = false, num = false, caracterEspecial = false;
+
+       
+                for (int i = 0; i < ppassword.Length; i++)
+                {
+                    if (Char.IsUpper(ppassword, i))
+                    {
+                        may = true;
+                    }
+                   else if (Char.IsLower(ppassword, i))
+                    {
+                        min = true;
+                    }
+                    else if (Char.IsDigit(ppassword, i))
+                    {
+                        num = true;
+                    }
+                    else
+                    {
+                        caracterEspecial = true;
+                    }
+
+                    if (may && min && num && caracterEspecial && ppassword.Length >= 8 && ppassword.Length <= 255)
+                    {
+                        return true;
+                    }
+                }
+            return R;
+        }
 
         public static bool CaracteresTexto(KeyPressEventArgs c, bool Mayusculas = false, bool Minisculas = false)
         {

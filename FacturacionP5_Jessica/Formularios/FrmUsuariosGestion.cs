@@ -111,12 +111,34 @@ namespace FacturacionP5_Jessica.Formularios
                !string.IsNullOrEmpty(TxtTelefono.Text.Trim()) &&
                !string.IsNullOrEmpty(TxtEmailRespaldo.Text.Trim()) &&
                !string.IsNullOrEmpty(TxtPassword.Text.Trim()) &&
-               CboxTipoUsuario.SelectedIndex>-1)
+               CboxTipoUsuario.SelectedIndex > -1)
             {
                 // TO DO: Validar la contraseña solo en Agregar y caso
                 //que se digite cuando estemos en modo de edición 
 
                 R = true;
+                if (!Validacion.ComprobarFormatoEmail(TxtEmail.Text))
+                {
+                    MessageBox.Show("El correo electrónico no cuenta con el formato correcto", "Error de validación", MessageBoxButtons.OK);
+                    TxtEmail.Focus();
+                    return false;
+                }
+
+                if (!Validacion.ComprobarFormatoEmail(TxtEmailRespaldo.Text))
+                {
+                    MessageBox.Show("El correo electrónico de respaldo no cuenta con el formato correcto", "Error de validación", MessageBoxButtons.OK);
+                    TxtEmail.Focus();
+                    return false;
+                }
+
+                if (!Validacion.ValidacionPassword(TxtPassword.Text))
+                {
+                    MessageBox.Show("La contraseña requiere de mínimo 8 carateres, al menos una letra mayúcula, una minúscula, un número entero, y un caracter especial ","Error de validación", MessageBoxButtons.OK);
+                    TxtPassword.Focus();
+                    return false;
+                }
+
+                
             }
             else
             {
