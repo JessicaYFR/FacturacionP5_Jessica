@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion.cs" />
+    <Compile Include="Encriptador.cs" />
     <Compile Include="Models\Bitacora.cs" />
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\ClienteTipo.cs" />

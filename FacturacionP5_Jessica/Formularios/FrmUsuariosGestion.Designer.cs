@@ -85,6 +85,7 @@
             this.DgvListaUsuarios.Size = new System.Drawing.Size(776, 137);
             this.DgvListaUsuarios.TabIndex = 0;
             this.DgvListaUsuarios.VirtualMode = true;
+            this.DgvListaUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvListaUsuarios_CellClick);
             this.DgvListaUsuarios.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.DgvListaUsuarios_DataBindingComplete);
             // 
             // CIDUsuario
@@ -186,6 +187,7 @@
             this.TxtPassword.Size = new System.Drawing.Size(232, 20);
             this.TxtPassword.TabIndex = 11;
             this.TxtPassword.UseSystemPasswordChar = true;
+            this.TxtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPassword_KeyPress);
             // 
             // label10
             // 
@@ -211,6 +213,7 @@
             this.TxtEmailRespaldo.Name = "TxtEmailRespaldo";
             this.TxtEmailRespaldo.Size = new System.Drawing.Size(294, 20);
             this.TxtEmailRespaldo.TabIndex = 9;
+            this.TxtEmailRespaldo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtEmailRespaldo_KeyPress);
             // 
             // label9
             // 
@@ -227,6 +230,7 @@
             this.TxtTelefono.Name = "TxtTelefono";
             this.TxtTelefono.Size = new System.Drawing.Size(294, 20);
             this.TxtTelefono.TabIndex = 9;
+            this.TxtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtTelefono_KeyPress);
             // 
             // label6
             // 
@@ -243,6 +247,7 @@
             this.TxtCedula.Name = "TxtCedula";
             this.TxtCedula.Size = new System.Drawing.Size(239, 20);
             this.TxtCedula.TabIndex = 7;
+            this.TxtCedula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCedula_KeyPress);
             // 
             // label5
             // 
@@ -259,6 +264,7 @@
             this.TxtNombre.Name = "TxtNombre";
             this.TxtNombre.Size = new System.Drawing.Size(239, 20);
             this.TxtNombre.TabIndex = 5;
+            this.TxtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtNombre_KeyPress);
             // 
             // TxtEmail
             // 
@@ -266,6 +272,7 @@
             this.TxtEmail.Name = "TxtEmail";
             this.TxtEmail.Size = new System.Drawing.Size(239, 20);
             this.TxtEmail.TabIndex = 4;
+            this.TxtEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtEmail_KeyPress);
             // 
             // label4
             // 
@@ -329,6 +336,7 @@
             this.BtnEditar.TabIndex = 3;
             this.BtnEditar.Text = "EDITAR";
             this.BtnEditar.UseVisualStyleBackColor = false;
+            this.BtnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
             // 
             // BtnEliminar
             // 
@@ -355,6 +363,7 @@
             this.BtnLimpiarForm.TabIndex = 5;
             this.BtnLimpiarForm.Text = "Limpiar Formulario";
             this.BtnLimpiarForm.UseVisualStyleBackColor = false;
+            this.BtnLimpiarForm.Click += new System.EventHandler(this.BtnLimpiarForm_Click);
             // 
             // BtnCerrar
             // 
@@ -375,7 +384,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(203, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 16);
+            this.label1.Size = new System.Drawing.Size(50, 16);
             this.label1.TabIndex = 7;
             this.label1.Text = "Buscar";
             // 
@@ -398,7 +407,7 @@
             this.CbVerActivos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CbVerActivos.Location = new System.Drawing.Point(637, 11);
             this.CbVerActivos.Name = "CbVerActivos";
-            this.CbVerActivos.Size = new System.Drawing.Size(151, 20);
+            this.CbVerActivos.Size = new System.Drawing.Size(152, 20);
             this.CbVerActivos.TabIndex = 9;
             this.CbVerActivos.Text = "Ver Usuarios Activos";
             this.CbVerActivos.UseVisualStyleBackColor = true;
