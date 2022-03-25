@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -64,12 +65,78 @@ namespace Logica.Models
 
             bool R = false;
 
+            //Según el diagrama de caso de uso expandido
+            //para la gestión de usuarios para poder editar
+            //un usuario primero debemos ejecutar el caso de uso de
+            //consultar por ID
+            Usuario usuarioConsulta = new Usuario();
+
+            usuarioConsulta = ConsultarPorID(this.IDUsuario);
+
+            if (usuarioConsulta.IDUsuario > 0)
+            {
+                //ya se validó que existe el usuario
+                //se prosigue con la edición del usuario
+
+
+                Conexion MyCnn = new Conexion();
+
+                string PassWordEncriptado = "";
+
+                if (!string.IsNullOrEmpty(this.Contrasennia))
+                {
+                    Encriptador MiEncriptador = new Encriptador();
+                    PassWordEncriptado = MiEncriptador.EncriptarEnUnSentido(this.Contrasennia);
+                
+                }
+                //se agregan los parametros del sp
+
+
+                MyCnn.ListaParametros.Add(new System.Data.SqlClient.SqlParameter("@id", this.IDUsuario));
+                MyCnn.ListaParametros.Add(new System.Data.SqlClient.SqlParameter("@Nombre", this.Nombre));
+                MyCnn.ListaParametros.Add(new System.Data.SqlClient.SqlParameter("@nombreUsuario", this.NombreUsuario));
+                MyCnn.ListaParametros.Add(new System.Data.SqlClient.SqlParameter("@Telefono", this.Telefono));
+                MyCnn.ListaParametros.Add(new System.Data.SqlClient.SqlParameter("@CorreoRespaldo", this.CorreoDeRespaldo));
+                MyCnn.ListaParametros.Add(new System.Data.SqlClient.SqlParameter("@Contrasennia", PassWordEncriptado));
+                MyCnn.ListaParametros.Add(new System.Data.SqlClient.SqlParameter("@Cedula", this.Cedula));
+                MyCnn.ListaParametros.Add(new System.Data.SqlClient.SqlParameter("@IdUsuarioRol", this.MiUsuarioRol.IDUsuarioRol));
+
+                int Resultado = MyCnn.EjecutarUpdateDeleteInsert("SpUsuariosEditar");
+                if (Resultado>0) 
+                {
+                    R = true;
+                }            
+            }
+
             return R;
         }
         public bool Eliminar()
         {
             bool R = false;
-            
+
+            Conexion MyCnn = new Conexion();
+
+            MyCnn.ListaParametros.Add(new SqlParameter("@id",IDUsuario));
+
+            if (MyCnn.EjecutarUpdateDeleteInsert("SpUsuariosDesactivar")>0)R=true;
+            {
+                return R;
+            }
+            return R;
+        }
+
+        public bool Activar()
+        {
+            bool R = false;
+
+            Conexion MyCnn = new Conexion();
+
+            MyCnn.ListaParametros.Add(new SqlParameter("@id", IDUsuario));
+
+            if (MyCnn.EjecutarUpdateDeleteInsert("SpUsuariosActivar") > 0) R = true;
+            {
+                return R;
+            }
             return R;
         }
         public bool ConsultarPorCedula()
@@ -166,6 +233,10 @@ namespace Logica.Models
         public DataTable ListarInactivos()
         {
             DataTable R = new DataTable();
+           
+            Conexion MiCnn = new Conexion();
+           
+            R = MiCnn.EjecutarSelect("SpUsuariosListarInactivos");
 
             return R;
         }

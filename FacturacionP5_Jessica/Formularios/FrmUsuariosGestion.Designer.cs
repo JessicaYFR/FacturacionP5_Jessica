@@ -34,7 +34,7 @@
             this.CNombreUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CCedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CRol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.GbDetalles = new System.Windows.Forms.GroupBox();
             this.CboxTipoUsuario = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.textBox8 = new System.Windows.Forms.TextBox();
@@ -61,8 +61,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.TxtBuscar = new System.Windows.Forms.TextBox();
             this.CbVerActivos = new System.Windows.Forms.CheckBox();
+            this.BtnVerPassword = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DgvListaUsuarios)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.GbDetalles.SuspendLayout();
             this.SuspendLayout();
             // 
             // DgvListaUsuarios
@@ -128,32 +129,33 @@
             this.CRol.Name = "CRol";
             this.CRol.ReadOnly = true;
             // 
-            // groupBox1
+            // GbDetalles
             // 
-            this.groupBox1.Controls.Add(this.CboxTipoUsuario);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.textBox8);
-            this.groupBox1.Controls.Add(this.TxtPassword);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.TxtEmailRespaldo);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.TxtTelefono);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.TxtCedula);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.TxtNombre);
-            this.groupBox1.Controls.Add(this.TxtEmail);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.TxtCodigo);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(12, 196);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(776, 167);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Detalles de usuario";
+            this.GbDetalles.Controls.Add(this.BtnVerPassword);
+            this.GbDetalles.Controls.Add(this.CboxTipoUsuario);
+            this.GbDetalles.Controls.Add(this.label8);
+            this.GbDetalles.Controls.Add(this.textBox8);
+            this.GbDetalles.Controls.Add(this.TxtPassword);
+            this.GbDetalles.Controls.Add(this.label10);
+            this.GbDetalles.Controls.Add(this.label7);
+            this.GbDetalles.Controls.Add(this.TxtEmailRespaldo);
+            this.GbDetalles.Controls.Add(this.label9);
+            this.GbDetalles.Controls.Add(this.TxtTelefono);
+            this.GbDetalles.Controls.Add(this.label6);
+            this.GbDetalles.Controls.Add(this.TxtCedula);
+            this.GbDetalles.Controls.Add(this.label5);
+            this.GbDetalles.Controls.Add(this.TxtNombre);
+            this.GbDetalles.Controls.Add(this.TxtEmail);
+            this.GbDetalles.Controls.Add(this.label4);
+            this.GbDetalles.Controls.Add(this.label3);
+            this.GbDetalles.Controls.Add(this.TxtCodigo);
+            this.GbDetalles.Controls.Add(this.label2);
+            this.GbDetalles.Location = new System.Drawing.Point(12, 196);
+            this.GbDetalles.Name = "GbDetalles";
+            this.GbDetalles.Size = new System.Drawing.Size(776, 167);
+            this.GbDetalles.TabIndex = 1;
+            this.GbDetalles.TabStop = false;
+            this.GbDetalles.Text = "Detalles de usuario";
             // 
             // CboxTipoUsuario
             // 
@@ -213,7 +215,9 @@
             this.TxtEmailRespaldo.Name = "TxtEmailRespaldo";
             this.TxtEmailRespaldo.Size = new System.Drawing.Size(294, 20);
             this.TxtEmailRespaldo.TabIndex = 9;
+            this.TxtEmailRespaldo.TextChanged += new System.EventHandler(this.TxtEmailRespaldo_TextChanged);
             this.TxtEmailRespaldo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtEmailRespaldo_KeyPress);
+            this.TxtEmailRespaldo.Leave += new System.EventHandler(this.TxtEmailRespaldo_Leave);
             // 
             // label9
             // 
@@ -273,6 +277,7 @@
             this.TxtEmail.Size = new System.Drawing.Size(239, 20);
             this.TxtEmail.TabIndex = 4;
             this.TxtEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtEmail_KeyPress);
+            this.TxtEmail.Leave += new System.EventHandler(this.TxtEmail_Leave);
             // 
             // label4
             // 
@@ -350,6 +355,7 @@
             this.BtnEliminar.TabIndex = 4;
             this.BtnEliminar.Text = "ELIMINAR";
             this.BtnEliminar.UseVisualStyleBackColor = false;
+            this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
             // BtnLimpiarForm
             // 
@@ -384,7 +390,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(203, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 16);
+            this.label1.Size = new System.Drawing.Size(49, 16);
             this.label1.TabIndex = 7;
             this.label1.Text = "Buscar";
             // 
@@ -407,10 +413,22 @@
             this.CbVerActivos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CbVerActivos.Location = new System.Drawing.Point(637, 11);
             this.CbVerActivos.Name = "CbVerActivos";
-            this.CbVerActivos.Size = new System.Drawing.Size(152, 20);
+            this.CbVerActivos.Size = new System.Drawing.Size(151, 20);
             this.CbVerActivos.TabIndex = 9;
             this.CbVerActivos.Text = "Ver Usuarios Activos";
             this.CbVerActivos.UseVisualStyleBackColor = true;
+            this.CbVerActivos.CheckStateChanged += new System.EventHandler(this.CbVerActivos_CheckStateChanged);
+            // 
+            // BtnVerPassword
+            // 
+            this.BtnVerPassword.Location = new System.Drawing.Point(693, 86);
+            this.BtnVerPassword.Name = "BtnVerPassword";
+            this.BtnVerPassword.Size = new System.Drawing.Size(37, 22);
+            this.BtnVerPassword.TabIndex = 14;
+            this.BtnVerPassword.Text = "Ver";
+            this.BtnVerPassword.UseVisualStyleBackColor = true;
+            this.BtnVerPassword.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BtnVerPassword_MouseDown);
+            this.BtnVerPassword.MouseUp += new System.Windows.Forms.MouseEventHandler(this.BtnVerPassword_MouseUp);
             // 
             // FrmUsuariosGestion
             // 
@@ -425,7 +443,7 @@
             this.Controls.Add(this.BtnEliminar);
             this.Controls.Add(this.BtnEditar);
             this.Controls.Add(this.BtnAgregar);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.GbDetalles);
             this.Controls.Add(this.DgvListaUsuarios);
             this.MaximizeBox = false;
             this.Name = "FrmUsuariosGestion";
@@ -433,8 +451,8 @@
             this.Text = "Gestión de Usuarios";
             this.Load += new System.EventHandler(this.FrmUsuariosGestion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgvListaUsuarios)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.GbDetalles.ResumeLayout(false);
+            this.GbDetalles.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -443,7 +461,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView DgvListaUsuarios;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox GbDetalles;
         private System.Windows.Forms.Button BtnAgregar;
         private System.Windows.Forms.Button BtnEditar;
         private System.Windows.Forms.Button BtnEliminar;
@@ -475,5 +493,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CNombreUsuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn CCedula;
         private System.Windows.Forms.DataGridViewTextBoxColumn CRol;
+        private System.Windows.Forms.Button BtnVerPassword;
     }
 }
