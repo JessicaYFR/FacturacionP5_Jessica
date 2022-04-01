@@ -15,8 +15,8 @@ namespace FacturacionP5_Jessica
         static void Main()
         {
             Application.EnableVisualStyles();
-          //  Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(ObjetosGlobales.MiFormularioPrincipal);
+           Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Formularios.FrmLogin());
         }
     }
 }
