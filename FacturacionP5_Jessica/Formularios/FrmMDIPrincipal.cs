@@ -65,5 +65,14 @@ namespace FacturacionP5_Jessica.Formularios
         {
             LblFechaHora.Text = DateTime.Now.ToLongDateString() + " " + DateTime.Now.ToShortTimeString();
         }
+
+        private void MnuFacturar_Click(object sender, EventArgs e)
+        {
+            if (!ObjetosGlobales.MiFormFacturador.Visible)
+            {
+                ObjetosGlobales.MiFormFacturador = new FrmFacturacion();
+                ObjetosGlobales.MiFormFacturador.Show();
+            }
+        }
     }
 }
