@@ -42,8 +42,10 @@ namespace Logica.Models
             //instancio variable de retorno
             DataTable R = new DataTable();
 
-            //TO DO: Escribir código para llenar R con los datos
-            ////necesarios
+            Conexion MyCnn = new Conexion();
+
+            R = MyCnn.EjecutarSelect("SpFacturasTipoListar");
+           
             return R;
         }
     }

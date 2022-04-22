@@ -23,10 +23,10 @@ namespace Logica.Models
         //Atributos compuestos
 
         // composiciones simples
-        FacturaTipo MiTipo { get; set; }
-        Empresa MiEmpresa { get; set; }
-        Cliente MiCliente { get; set; }
-        Usuario MiUsuario { get; set; }
+       public FacturaTipo MiTipo { get; set; }
+        public Empresa MiEmpresa { get; set; }
+        public Cliente MiCliente { get; set; }
+        public Usuario MiUsuario { get; set; }
 
         //Composisiones múltiples
 
@@ -79,6 +79,19 @@ namespace Logica.Models
         {
             // TO DO: Asignar valores a los rubros decimales
             
+        }
+
+        public DataTable AsignarEsquemaDetalle()
+        {
+            DataTable R = new DataTable();
+
+            Conexion MyCnn = new Conexion();
+
+            R = MyCnn.EjecutarSelect("SpFacturasDetalleEsquema", true);
+
+            R.PrimaryKey = null;
+
+            return R;
         }
     }
 }
