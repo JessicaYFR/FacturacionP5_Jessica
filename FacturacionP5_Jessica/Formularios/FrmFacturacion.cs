@@ -33,6 +33,35 @@ namespace FacturacionP5_Jessica.Formularios
         {
 
         }
+        private void Totalizar()
+        {
+            if (ListaDetallesLocal!= null && ListaDetallesLocal.Rows.Count>0)
+            {
+                //se recorre cada linea del detalle y se suman los montos correspondientes
+
+                decimal Subt = 0;
+                decimal Descuentos = 0;
+                decimal Impuestos = 0;
+                decimal Total = 0;
+
+                foreach (DataRow item in ListaDetallesLocal.Rows)
+                {
+                    Subt += Convert.ToDecimal(item["CantidadFacturada"]) * Convert.ToDecimal(item["PrecioUnitario"]);
+
+                    Descuentos += Subt * Convert.ToDecimal(item["PorcentajeDescuento"]) / 100;
+
+                    Impuestos += Convert.ToDecimal(item["ImpuestosLinea"]);
+
+                    Total += Convert.ToDecimal(item["TotalLinea"]);
+                }
+                //una vez se tienen las sumas se presentan en los txt correspondientes
+
+                LblSubTotal.Text = string.Format("{0:N2}", Subt);
+                LblDescuentos.Text = string.Format("{0:N2}", Descuentos);
+                LblImpuestos.Text = string.Format("{0:N2}", Impuestos);
+                LblTotal.Text = string.Format("{0:N2}", Total);
+            }
+        }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -128,6 +157,54 @@ Form MiformBuscarCliente = new Formularios.FrmClienteSeleccionar();
             else
             {
                 LblNombreCliente.Text = "";
+            }
+        }
+
+        private void BtnItemAgregar_Click(object sender, EventArgs e)
+        {
+            Form formSeleccionDeItem = new FrmFacturacionItemGestion();
+
+            DialogResult resp = formSeleccionDeItem.ShowDialog();
+
+            if (resp == DialogResult.OK)
+            {
+                //se ha seleccionado correctamente un item 
+
+                DgvListaItems.DataSource = ListaDetallesLocal;
+
+                Totalizar();
+              
+           
+
+                //...
+            
+            }
+        }
+
+        private void CargarDetalleDeFactura()
+        {
+            //Cargar en la composicion los detalles a partir del datatable de detalles local
+
+            foreach (DataRow item in ListaDetallesLocal.Rows)
+            {
+
+
+
+            }
+        }
+        private void BtnFacturar_Click(object sender, EventArgs e)
+        {
+            //to do: efectuar las validaciones correspondientes, ejem que la fecha no sea mayor a la acatual y que se hayan seleccionado datos minimos
+
+            if (ListaDetallesLocal!= null && ListaDetallesLocal.Rows.Count >0)
+            {
+                FacturaLocal.MiCliente.IDCliente = Convert.ToInt32(TxtIdCliente.Text.Trim());
+                FacturaLocal.MiTipo.IDFacturaTipo = Convert.ToInt32(CboxTipoFactura.SelectedValue);
+                FacturaLocal.MiEmpresa.IDEmpresa = Convert.ToInt32(CboxEmpresa.SelectedValue);
+                FacturaLocal.Fecha = DtpFechaFactura.Value.Date;
+                FacturaLocal.Anotaciones = TxtNotas.Text.Trim();
+
+
             }
         }
     }

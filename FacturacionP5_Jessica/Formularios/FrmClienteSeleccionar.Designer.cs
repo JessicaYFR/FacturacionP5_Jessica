@@ -32,11 +32,11 @@ namespace FacturacionP5_Jessica.Formularios
             this.components = new System.ComponentModel.Container();
             this.TxtBuscar = new System.Windows.Forms.TextBox();
             this.DgvLista = new System.Windows.Forms.DataGridView();
-            this.BtnSeleccionarCliente = new System.Windows.Forms.Button();
-            this.BtnCancelar = new System.Windows.Forms.Button();
             this.CIDCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CTelefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BtnAceptar = new System.Windows.Forms.Button();
+            this.BtnCancelar = new System.Windows.Forms.Button();
             this.TmrBuscarCliente = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.DgvLista)).BeginInit();
             this.SuspendLayout();
@@ -73,30 +73,6 @@ namespace FacturacionP5_Jessica.Formularios
             this.DgvLista.VirtualMode = true;
             this.DgvLista.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.DgvLista_DataBindingComplete);
             // 
-            // BtnSeleccionarCliente
-            // 
-            this.BtnSeleccionarCliente.BackColor = System.Drawing.Color.LimeGreen;
-            this.BtnSeleccionarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnSeleccionarCliente.Location = new System.Drawing.Point(39, 217);
-            this.BtnSeleccionarCliente.Name = "BtnSeleccionarCliente";
-            this.BtnSeleccionarCliente.Size = new System.Drawing.Size(152, 39);
-            this.BtnSeleccionarCliente.TabIndex = 2;
-            this.BtnSeleccionarCliente.Text = "Seleccionar Cliente";
-            this.BtnSeleccionarCliente.UseVisualStyleBackColor = false;
-            this.BtnSeleccionarCliente.Click += new System.EventHandler(this.BtnSeleccionarCliente_Click);
-            // 
-            // BtnCancelar
-            // 
-            this.BtnCancelar.BackColor = System.Drawing.Color.IndianRed;
-            this.BtnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCancelar.Location = new System.Drawing.Point(316, 217);
-            this.BtnCancelar.Name = "BtnCancelar";
-            this.BtnCancelar.Size = new System.Drawing.Size(84, 39);
-            this.BtnCancelar.TabIndex = 3;
-            this.BtnCancelar.Text = "Cancelar";
-            this.BtnCancelar.UseVisualStyleBackColor = false;
-            this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
-            // 
             // CIDCliente
             // 
             this.CIDCliente.DataPropertyName = "IDCliente";
@@ -119,6 +95,30 @@ namespace FacturacionP5_Jessica.Formularios
             this.CTelefono.Name = "CTelefono";
             this.CTelefono.ReadOnly = true;
             // 
+            // BtnAceptar
+            // 
+            this.BtnAceptar.BackColor = System.Drawing.Color.LimeGreen;
+            this.BtnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnAceptar.Location = new System.Drawing.Point(39, 217);
+            this.BtnAceptar.Name = "BtnAceptar";
+            this.BtnAceptar.Size = new System.Drawing.Size(152, 39);
+            this.BtnAceptar.TabIndex = 2;
+            this.BtnAceptar.Text = "Seleccionar Cliente";
+            this.BtnAceptar.UseVisualStyleBackColor = false;
+            this.BtnAceptar.Click += new System.EventHandler(this.BtnSeleccionarCliente_Click);
+            // 
+            // BtnCancelar
+            // 
+            this.BtnCancelar.BackColor = System.Drawing.Color.IndianRed;
+            this.BtnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCancelar.Location = new System.Drawing.Point(316, 217);
+            this.BtnCancelar.Name = "BtnCancelar";
+            this.BtnCancelar.Size = new System.Drawing.Size(84, 39);
+            this.BtnCancelar.TabIndex = 3;
+            this.BtnCancelar.Text = "Cancelar";
+            this.BtnCancelar.UseVisualStyleBackColor = false;
+            this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
+            // 
             // TmrBuscarCliente
             // 
             this.TmrBuscarCliente.Interval = 800;
@@ -131,7 +131,7 @@ namespace FacturacionP5_Jessica.Formularios
             this.ClientSize = new System.Drawing.Size(429, 268);
             this.ControlBox = false;
             this.Controls.Add(this.BtnCancelar);
-            this.Controls.Add(this.BtnSeleccionarCliente);
+            this.Controls.Add(this.BtnAceptar);
             this.Controls.Add(this.DgvLista);
             this.Controls.Add(this.TxtBuscar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -149,7 +149,7 @@ namespace FacturacionP5_Jessica.Formularios
 
         private System.Windows.Forms.TextBox TxtBuscar;
         private System.Windows.Forms.DataGridView DgvLista;
-        private System.Windows.Forms.Button BtnSeleccionarCliente;
+        private System.Windows.Forms.Button BtnAceptar;
         private System.Windows.Forms.Button BtnCancelar;
         private System.Windows.Forms.DataGridViewTextBoxColumn CIDCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn CNombre;

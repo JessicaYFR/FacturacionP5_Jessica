@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Cancelar = new System.Windows.Forms.Button();
@@ -152,6 +152,7 @@
             this.BtnFacturar.TabIndex = 0;
             this.BtnFacturar.Text = "Facturar";
             this.BtnFacturar.UseVisualStyleBackColor = false;
+            this.BtnFacturar.Click += new System.EventHandler(this.BtnFacturar_Click);
             // 
             // PanelEncabezado
             // 
@@ -335,14 +336,14 @@
             this.CSubTotalLinea,
             this.CImpuestosLinea,
             this.CTotalLinea});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvListaItems.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvListaItems.DefaultCellStyle = dataGridViewCellStyle2;
             this.DgvListaItems.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DgvListaItems.Location = new System.Drawing.Point(3, 133);
             this.DgvListaItems.Name = "DgvListaItems";
@@ -452,6 +453,7 @@
             this.BtnItemAgregar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.BtnItemAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.BtnItemAgregar.UseVisualStyleBackColor = false;
+            this.BtnItemAgregar.Click += new System.EventHandler(this.BtnItemAgregar_Click);
             // 
             // BtnItemModificar
             // 
@@ -647,9 +649,9 @@
             this.LblTotal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.LblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblTotal.ForeColor = System.Drawing.Color.Yellow;
-            this.LblTotal.Location = new System.Drawing.Point(3, 26);
+            this.LblTotal.Location = new System.Drawing.Point(3, 25);
             this.LblTotal.Name = "LblTotal";
-            this.LblTotal.Size = new System.Drawing.Size(266, 41);
+            this.LblTotal.Size = new System.Drawing.Size(266, 42);
             this.LblTotal.TabIndex = 4;
             this.LblTotal.Text = "0";
             this.LblTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -661,7 +663,7 @@
             this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.Location = new System.Drawing.Point(3, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(266, 26);
+            this.label10.Size = new System.Drawing.Size(266, 25);
             this.label10.TabIndex = 2;
             this.label10.Text = "TOTAL";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

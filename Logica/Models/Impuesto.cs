@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Logica.Models
 {
-    class Impuesto
+  public  class Impuesto
     {
         public int IDImpuesto { get; set; }
 
